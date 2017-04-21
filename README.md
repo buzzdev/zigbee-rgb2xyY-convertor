@@ -1,2 +1,45 @@
 # zigbee-rgb2xyY-convertor
 Converting colors for zigbee RGB lamps from RGB to XYZ to xzY and back from xy to XYZ to RGB
+
+## Examples
+
+### RGB -> XYZ -xyY
+```
+$ ./rgb2xyY.py RGB 220 20 60
+Converting RGB [220 20 60] to xyY
+rgb -> XYZ
+RGB input: 220 20 60
+RGB input: 0.862745098039 0.078431372549 0.235294117647
+XYZ output: 0.493206541176 0.218326729412 0.233693364706 
+
+XYZ -> xyY
+XYZ input: 0.493206541176 0.218326729412 0.233693364706
+xyY output: 0.521786545957 0.230978181591 0.218326729412 
+
+------------------------------------
+Converting xyY back to RGB for check
+------------------------------------
+xyY -> XYZ
+xyY input: 0.521786545957 0.230978181591 0.218326729412
+XYZ output: 0.493206541176 0.218326729412 0.233693364706
+
+XYZ -> RGB
+XYZ input: 0.493206541176 0.218326729412 0.233693364706
+RGB output: 0.862745 0.078431 0.235294
+RGB output: 220 19 60
+```
+
+
+### xyY -> XYZ -> RGB
+```
+$ ./rgb2xyY.py xyy 0.521786545957 0.230978181591 0.23
+Converting xyY [0.521786545957 0.230978181591 0.23] to RGB
+xyY -> XYZ
+xyY input: 0.521786545957 0.230978181591 0.23
+XYZ output: 0.519576804802 0.23 0.246188242856
+
+XYZ -> RGB
+XYZ input: 0.519576804802 0.23 0.246188242856
+RGB output: 0.908874 0.082625 0.247875
+RGB output: 231 21 63
+```
